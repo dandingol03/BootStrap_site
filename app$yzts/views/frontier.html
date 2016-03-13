@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bootstrap template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../libs/css/bootstrap.css">
+    <link href="../libs/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../libs/css/ionicons.css" rel="stylesheet" type="text/css"/>
+    <style>
+
+        body{
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        body > .header{
+            position: relative;
+            max-height: 100px;
+            z-index: 1030;
+            top:0;
+            font-family:Microsoft YaHei, lucida, verdana, arial, sans-serif;
+        }
+
+        .skin-blue .logo{
+            background-color:#367fa9;
+            color:#f9f9f9;
+        }
+        body>.header .logo{
+            float:left;
+            font-size:2em;
+            text-align:center;
+            font-family:'Kaushan Script', cursive;
+            font-weight:bolder;
+            display:block;
+            line-height:50px;
+            padding:0 10px;
+            height:50px;
+            width:220px;
+        }
+
+
+        body>.header .navbar{
+            height:50px;
+            margin-left:220px;
+            margin-bottom:0;
+        }
+
+        .skin-blue .navbar{
+            background-color:#3c8dbc;
+
+        }
+
+        .skin-blue .navbar .sidebar-toggle .icon-bar{
+            background:#fff;
+        }
+
+        .skin-blue .navbar .sidebar-toggle .icon-bar +  .icon-bar
+        {
+            margin-top:4px;
+        }
+
+        .skin-blue .navbar .navbar-right > .nav{
+            margin-right:10px;
+        }
+
+        ul.nav.navbar-nav>li.dropdown.open>a.dropdown-toggle{
+          background:rgba(0,0,0,0.1);
+        }
+
+        .navbar-nav>.messages-menu>.dropdown-menu{
+            width:280px;
+            padding:0 0 0 0;
+            margin:0;
+            border:1px solid #dfdfdf;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            top:100%;
+        }
+
+        .navbar-nav>.messages-menu>.dropdown-menu>li.header{
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #ffffff;
+            padding: 7px 10px;
+            border-bottom: 1px solid #f4f4f4;
+            color: #444444;
+            font-size: .4em;
+        }
+
+
+
+
+        body > .header .navbar .sidebar-toggle{
+            float: left;
+            padding: 9px 5px;
+            margin-top: 8px;
+            margin-right: 0;
+            margin-bottom: 8px;
+            margin-left: 5px;
+            background-color: transparent;
+            background-image: none;
+            border: 1px solid transparent;
+        }
+
+        body > .header .navbar .sidebar-toggle .icon-bar{
+            display:block;
+            width:22px;
+            height:2px;
+            border-radius:4px;
+        }
+
+
+        .navbar .navbar-right
+        {
+            float:right;
+        }
+
+        /*信封图标*/
+        .fa{
+            display:inline-block;
+            font-family:FontAwesome;
+            font-style:normal;
+            font-weight:normal;
+            line-height:1;
+
+        }
+
+        .fa-envelope :before{
+            content:"\f0e0";
+        }
+
+        li.dropdown.messages-menu>a>span.label{
+            border-radius: 50%;
+            position:absolute;
+            top:7px;
+            right: 2px;
+            font-size: 10px;
+            font-weight: normal;
+            width: 15px;
+            height: 15px;
+            line-height: 1.0em;
+            text-align: center;
+            padding: 2px;
+        }
+        li.dropdown.open.messages-menu>a>span.label{
+            top:7px;
+            right:2px;
+            position:absolute;
+            width:15px;
+            height:15px;
+
+
+        }
+
+        .navbar-nav>.messages-menu>.dropdown-menu>li.menu>li>a{
+            line-height: 20px;
+            padding :10px 5px 10px 5px;
+            border-radius:4px;
+            display:block;
+            white-space:nowrap;
+            border-bottom:1px solid #f4f4f4;
+        }
+
+        ul.menu>li>a>div.pull-left>img{
+            width:40px;
+            height:40px;
+            border:1px solid #dddddd;
+            margin:auto 10px auto auto;
+
+        }
+        ul.menu>li>a>h4{
+            margin:0 0 0 45px;
+            font-size:15px;
+        }
+
+        .navbar-nav > .messages-menu > .dropdown-menu > li .menu{
+            padding:0;
+            margin:0;
+            list-style:none;
+        }
+        .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a{
+            margin:0px;
+            line-height: 20px;
+            padding:10px 5px 10px 5px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            display:block;
+            white-space: nowrap;
+        }
+
+        .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p
+        {
+            font-size:12px;
+            margin:0 0 0 45px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4 > small
+        {
+            color:#999999;
+            float:right;
+            font-size:10px;
+            line-height: 1;
+            font-weight: normal;
+        }
+
+        /* Layouts */
+        .wrapper {
+            min-height: 100%;
+        }
+        .wrapper:before,
+        .wrapper:after {
+            display: table;
+            content: " ";
+        }
+        .wrapper:after {
+            clear: both;
+        }
+
+        /*left side - contains sidebar*/
+
+        @media screen and (min-width: 992px) {
+
+            .left-side {
+
+                top: 50px;
+            }
+        }
+
+        .left-side {
+            min-height: 100%;
+            display: block;
+        }
+        .left-side {
+            position: absolute;
+            width: 220px;
+
+        }
+
+        .skin-blue .left-side {
+            background: #f4f4f4;
+            -webkit-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.1);
+            box-shadow: inset -3px 0px 8px -4px rgba(0, 0, 0, 0.07);
+        }
+        /*右边主内容区样式*/
+        .content{
+            padding: 20px 15px;
+            background:#f9f9f9;
+        }
+        .right-side{
+            min-height: 100%;
+            display: block;
+            background-color: #f9f9f9;
+            margin-left: 220px;
+        }
+        /*右边主内容区标头样式*/
+        .right-side > .content-header {
+            position: relative;
+            padding: 15px 15px 10px 20px;
+        }
+
+        .skin-blue .right-side > .content-header {
+            background: #fbfbfb;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-side > .content-header > h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .right-side > .content-header > h1 > small {
+            font-size: 15px;
+            display: inline-block;
+            padding-left: 4px;
+            font-weight: 300;
+        }
+
+        .right-side > .content-header > .breadcrumb {
+            float: right;
+            background: transparent;
+            margin-top: 0px;
+            margin-bottom: 0;
+            font-size: 12px;
+            padding: 7px 5px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        .sidebar {
+            margin-bottom: 5px;
+        }
+
+        .skin-blue .sidebar {
+            border-bottom: 1px solid #fff;
+        }
+
+        /*用户面板样式*/
+        .user-panel {
+            padding: 10px;
+        }
+        .user-panel:before,
+        .user-panel:after {
+            display: table;
+            content: " ";
+        }
+        .user-panel:after {
+            clear: both;
+        }
+        .user-panel > .image > img {
+            width: 45px;
+            height: 45px;
+        }
+        .user-panel > .info {
+            font-weight: 600;
+            padding: 5px 5px 5px 15px;
+            font-size: 14px;
+            line-height: 1;
+        }
+        .user-panel > .info > p {
+            margin-bottom: 9px;
+        }
+        .user-panel > .info > a {
+            text-decoration: none;
+            padding-right: 5px;
+            margin-top: 3px;
+            font-size: 11px;
+            font-weight: normal;
+        }
+        .user-panel > .info > a > .fa,
+        .user-panel > .info > a > .ion,
+        .user-panel > .info > a > .glyphicon {
+            margin-right: 3px;
+        }
+
+        /*搜索框样式,un-resolved*/
+        .skin-blue .sidebar-form {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            border: 1px solid #dbdbdb;
+            margin: 10px 10px;
+        }
+        .skin-blue .sidebar-form input[type="text"],
+        .skin-blue .sidebar-form .btn {
+            box-shadow: none;
+            background-color: #fafafa;
+            border: 1px solid #fafafa;
+            height: 35px;
+        }
+        .skin-blue .sidebar-form input[type="text"] {
+            color: #666;
+            -webkit-border-top-left-radius: 2px !important;
+            -webkit-border-top-right-radius: 0 !important;
+            -webkit-border-bottom-right-radius: 0 !important;
+            -webkit-border-bottom-left-radius: 2px !important;
+            -moz-border-radius-topleft: 2px !important;
+            -moz-border-radius-topright: 0 !important;
+            -moz-border-radius-bottomright: 0 !important;
+            -moz-border-radius-bottomleft: 2px !important;
+            border-top-left-radius: 2px !important;
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            border-bottom-left-radius: 2px !important;
+        }
+        .skin-blue .sidebar-form input[type="text"]:focus,
+        .skin-blue .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+            background-color: #fff;
+            color: #666;
+        }
+        .skin-blue .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+            border-left-color: #fff;
+        }
+        .skin-blue .sidebar-form .btn {
+            color: #999;
+            -webkit-border-top-left-radius: 0 !important;
+            -webkit-border-top-right-radius: 2px !important;
+            -webkit-border-bottom-right-radius: 2px !important;
+            -webkit-border-bottom-left-radius: 0 !important;
+            -moz-border-radius-topleft: 0 !important;
+            -moz-border-radius-topright: 2px !important;
+            -moz-border-radius-bottomright: 2px !important;
+            -moz-border-radius-bottomleft: 0 !important;
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 2px !important;
+            border-bottom-right-radius: 2px !important;
+            border-bottom-left-radius: 0 !important;
+        }
+
+        /*侧边栏menu样式*/
+        .sidebar .sidebar-menu{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        .skin-blue .sidebar > .sidebar-menu > li:first-of-type {
+            border-top: 1px solid #dbdbdb;
+        }
+        .skin-blue .sidebar > .sidebar-menu > li {
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #dbdbdb;
+            padding:0px 10px 0px 0px;
+        }
+        .skin-blue .sidebar > .sidebar-menu > li > a {
+            margin-right: 1px;
+        }
+        .skin-blue .sidebar > .sidebar-menu > li.active > a{
+            color:#222;
+            background:#f9f9f9;
+        }
+        .sidebar .sidebar-menu > li > a {
+            padding: 12px 5px 12px 15px;
+            display: block;
+        }
+
+        .bg-green{
+            background-color:#00a65a;
+        }
+
+        .bg-aqua {
+            background-color: #00c0ef !important;
+        }
+        .bg-red {
+            background-color: #f56954 !important;
+        }
+        .bg-yellow {
+            background-color: #f39c12 !important;
+        }
+
+        .skin-blue .sidebar > .sidebar-menu > li > .treeview-menu {
+            margin: 0 1px;
+            background: #f9f9f9;
+        }
+        .sidebar .sidebar-menu .treeview-menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar .sidebar-menu .treeview-menu > li > a {
+            padding: 5px 5px 5px 15px;
+            display: block;
+            font-size: 14px;
+            margin: 0px 0px;
+        }
+
+        .skin-blue .sidebar > .sidebar-menu > li > a:hover,
+        .skin-blue .sidebar > .sidebar-menu > li.active > a {
+             color: #222;
+             background: #f9f9f9;
+         }
+
+        .sidebar .sidebar-menu .treeview-menu > li > a > .fa
+        {
+            width:20px;
+        }
+        .skin-blue .sidebar > .sidebar-menu > li >a>span{
+            margin-left:20px;
+        }
+
+        /*
+         Component: Small boxes
+         */
+
+        .small-box {
+            position: relative;
+            display: block;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+
+        .small-box > .inner {
+            padding: 10px;
+        }
+
+        .small-box > .small-box-footer {
+            position: relative;
+            text-align: center;
+            padding: 3px 0;
+            color: #fff;
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+        .small-box > .small-box-footer:hover {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.15);
+        }
+        .small-box h3 {
+            font-size: 38px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            white-space: nowrap;
+            padding: 0;
+        }
+        .small-box p {
+            font-size: 15px;
+        }
+        .small-box p > small {
+            display: block;
+            color: #f9f9f9;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .small-box h3,
+        .small-box p {
+            z-index: 5;
+        }
+
+        .small-box .icon {
+            position: absolute;
+            top: auto;
+            bottom: 5px;
+            right: 5px;
+            z-index: 0;
+            font-size: 90px;
+            color: rgba(0, 0, 0, 0.15);
+        }
+
+        .small-box:hover {
+            text-decoration: none;
+            color: #f9f9f9;
+        }
+        /*icon animation*/
+        .small-box:hover .icon {
+            animation-name: tansformAnimation;
+            animation-duration: .5s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            -webkit-animation-name: tansformAnimation;
+            -webkit-animation-duration: .5s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: ease;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-name: tansformAnimation;
+            -moz-animation-duration: .5s;
+            -moz-animation-iteration-count: 1;
+            -moz-animation-timing-function: ease;
+            -moz-animation-fill-mode: forwards;
+        }
+        @keyframes tansformAnimation {
+            from {
+                font-size: 90px;
+            }
+            to {
+                font-size: 100px;
+            }
+        }
+        @-webkit-keyframes tansformAnimation {
+            from {
+                font-size: 90px;
+            }
+            to {
+                font-size: 100px;
+            }
+        }
+
+
+
+        /*
+    component: Boxes
+        -------------------------
+        */
+
+        .box.box-primary {
+            border-top-color: #3c8dbc;
+        }
+        .box.box-info {
+            border-top-color: #00c0ef;
+        }
+        .box.box-danger {
+            border-top-color: #f56954;
+        }
+        .box.box-warning {
+            border-top-color: #f39c12;
+        }
+        .box.box-success {
+            border-top-color: #00a65a;
+        }
+
+        .box{
+            position: relative;
+            background: #ffffff;
+            border-top: 2px solid #c1c1c1;
+            margin-bottom: 20px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            width: 100%;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .box .box-header{
+            position: relative;
+            -webkit-border-top-left-radius: 3px;
+            -webkit-border-top-right-radius: 3px;
+            -webkit-border-bottom-right-radius: 0;
+            -webkit-border-bottom-left-radius: 0;
+            -moz-border-radius-topleft: 3px;
+            -moz-border-radius-topright: 3px;
+            -moz-border-radius-bottomright: 0;
+            -moz-border-radius-bottomleft: 0;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom: 0px solid #f4f4f4;
+            color: #444;
+            padding-bottom: 10px;
+        }
+
+        .box .box-header:before,
+        .box .box-header:after {
+            display: table;
+            content: " ";
+        }
+        .box .box-header:after {
+            clear: both;
+        }
+
+        .box .box-header > .box-tools {
+            padding: 5px 10px 5px 5px;
+        }
+
+        .btn {
+            font-weight: 500;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            border: 1px solid transparent;
+            -webkit-box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.09);
+            -moz-box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.09);
+            box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.09);
+        }
+
+        .btn.btn-danger {
+            background-color: #f56954;
+            border-color: #f4543c;
+        }
+
+        .box .box-header> .fa{
+            display: inline-block;
+            padding: 10px 0px 10px 10px;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 400;
+            float: left;
+            cursor: default;
+        }
+
+        .box .box-header .box-title {
+            display: inline-block;
+            padding: 10px 0px 10px 10px;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 400;
+            float: left;
+            cursor: default;
+        }
+
+        .box .box-body {
+            padding: 10px;
+            -webkit-border-top-left-radius: 0;
+            -webkit-border-top-right-radius: 0;
+            -webkit-border-bottom-right-radius: 3px;
+            -webkit-border-bottom-left-radius: 3px;
+            -moz-border-radius-topleft: 0;
+            -moz-border-radius-topright: 0;
+            -moz-border-radius-bottomright: 3px;
+            -moz-border-radius-bottomleft: 3px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+        .no-padding {
+            padding: 0px !important;
+        }
+
+    </style>
+    <script type="text/javascript" src="../libs/js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../libs/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../libs/js/hovertreesroll.js"></script>
+    <script type="text/javascript" src="../libs/js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="../libs/js/raphael-min.js"></script>
+</head>
+<body class="skin-blue">
+
+<header class="header">
+    <!--personal title above -->
+    <a href="index.html" class="logo">
+        <!-- Add the class icon to your logo image or logo icon to add the margining -->
+        AdminLTE
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+
+
+        <div class="navbar-right">
+            <ul class="nav navbar-nav">
+
+
+                <!--信息的下拉列表-->
+                <li class="dropdown messages-menu">
+                    <!--问题1，点击之后的图标下移-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <!--信封图标-->
+                        <i class="fa fa-envelope"></i>
+                        <span class="label label-success">4</span>
+                    </a>
+                    <!--信息图标点击后的列表-->
+                    <ul class="dropdown-menu">
+                        <li class="header">You have 4 messages</li>
+                        <li>
+
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <!--img-circle,Bootstrap内置样式-->
+                                            <img src="../img/avatar3.png" class="img-circle" alt="User Image"/>
+                                        </div>
+                                        <h4>
+                                            Support Team
+                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                </li><!-- end message -->
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="../img/avatar2.png" class="img-circle" alt="user image"/>
+                                        </div>
+                                        <h4>
+                                            AdminLTE Design
+                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="../img/avatar.png" class="img-circle" alt="user image"/>
+                                        </div>
+                                        <h4>
+                                            Developers
+                                            <small><i class="fa fa-clock-o"></i> Today</small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="../img/avatar2.png" class="img-circle" alt="user image"/>
+                                        </div>
+                                        <h4>
+                                            Sales Department
+                                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="pull-left">
+                                            <img src="../img/avatar.png" class="img-circle" alt="user image"/>
+                                        </div>
+                                        <h4>
+                                            Reviewers
+                                            <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                        </h4>
+                                        <p>Why not buy a new awesome theme?</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">See All Messages</a></li>
+                    </ul>
+                </li>
+
+
+
+                <!--通知的下拉列表-->
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-warning"></i>
+                        <span class="label label-warning">10</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">You have 10 notifications</li>
+                        <li>
+                            <!-- inner menu: contains the actual data -->
+                            <ul class="menu">
+                                <li>
+                                    <a href="#">
+                                        <i class="ion ion-ios7-people info"></i> 5 new members joined today
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-users warning"></i> 5 new members joined
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="ion ion-ios7-cart success"></i> 25 sales made
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ion ion-ios7-person danger"></i> You changed your username
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">View all</a></li>
+                    </ul>
+                </li>
+                <!-- Tasks: style can be found in dropdown.less -->
+                <li class="dropdown tasks-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-tasks"></i>
+                        <span class="label label-danger">9</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">You have 9 tasks</li>
+                        <li>
+                            <!-- inner menu: contains the actual data -->
+                            <ul class="menu">
+                                <li><!-- Task item -->
+                                    <a href="#">
+                                        <h3>
+                                            Design some buttons
+                                            <small class="pull-right">20%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">20% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li><!-- end task item -->
+                                <li><!-- Task item -->
+                                    <a href="#">
+                                        <h3>
+                                            Create a nice theme
+                                            <small class="pull-right">40%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">40% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li><!-- end task item -->
+                                <li><!-- Task item -->
+                                    <a href="#">
+                                        <h3>
+                                            Some task I need to do
+                                            <small class="pull-right">60%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">60% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li><!-- end task item -->
+                                <li><!-- Task item -->
+                                    <a href="#">
+                                        <h3>
+                                            Make beautiful transitions
+                                            <small class="pull-right">80%</small>
+                                        </h3>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                <span class="sr-only">80% Complete</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li><!-- end task item -->
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <a href="#">View all tasks</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>Jane Doe <i class="caret"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header bg-light-blue">
+                            <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
+                            <p>
+                                Jane Doe - Web Developer
+                                <small>Member since Nov. 2012</small>
+                            </p>
+                        </li>
+                        <!-- Menu Body -->
+                        <li class="user-body">
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Followers</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Sales</a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="#">Friends</a>
+                            </div>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+<div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+
+
+
+
+    <!--左侧导航栏-->
+    <aside class="left-side sidebar-offcanvas">
+
+        <section class="sidebar">
+            <!-- 用户头像面板-->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../img/avatar3.png" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>Hello, Jane</p>
+
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!--搜索框 -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                </div>
+            </form>
+
+            <!-- 侧边栏菜单-->
+            <ul class="sidebar-menu">
+
+                <li class="active">
+                    <a href="index.html">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pages/widgets.html">
+                        <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+                    </a>
+                </li>
+                <!--可展开列表,this css should corporate with sidebar tree view plugin-->
+                    <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <span>Charts</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
+                        <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
+                        <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>UI Elements</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
+                        <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
+                        <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
+                        <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
+                        <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>Forms</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
+                        <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
+                        <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-table"></i> <span>Tables</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li>
+                        <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="pages/calendar.html">
+                        <i class="fa fa-calendar"></i> <span>Calendar</span>
+                        <small class="badge pull-right bg-red">3</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/mailbox.html">
+                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                        <small class="badge pull-right bg-yellow">12</small>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-folder"></i> <span>Examples</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/examples/invoice.html"><i class="fa fa-angle-double-right"></i> Invoice</a></li>
+                        <li><a href="pages/examples/login.html"><i class="fa fa-angle-double-right"></i> Login</a></li>
+                        <li><a href="pages/examples/register.html"><i class="fa fa-angle-double-right"></i> Register</a></li>
+                        <li><a href="pages/examples/lockscreen.html"><i class="fa fa-angle-double-right"></i> Lockscreen</a></li>
+                        <li><a href="pages/examples/404.html"><i class="fa fa-angle-double-right"></i> 404 Error</a></li>
+                        <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>
+                        <li><a href="pages/examples/blank.html"><i class="fa fa-angle-double-right"></i> Blank Page</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+
+    <!--右侧主内容区-->
+    <aside class="right-side">
+        <!-- 标题头-->
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
+        <!--主内容-->
+
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- 统计 小盒子 -->
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>
+                                150
+                            </h3>
+                            <p>
+                                New Orders
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>
+                                53<sup style="font-size: 20px">%</sup>
+                            </h3>
+                            <p>
+                                Bounce Rate
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>
+                                44
+                            </h3>
+                            <p>
+                                User Registrations
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>
+                                65
+                            </h3>
+                            <p>
+                                Unique Visitors
+                            </p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div><!-- ./col -->
+            </div><!-- /.row -->
+
+
+
+            <!-- top row,i don't know what this mean -->
+            <div class="row">
+                <div class="col-xs-12 connectedSortable">
+
+                </div><!-- /.col -->
+            </div>
+
+            <!-- 图表区-->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-6 connectedSortable">
+                    <!-- 条线图 盒子 -->
+                    <div class="box box-danger" id="loading-example">
+                        <div class="box-header">
+                            <!-- tools box -->
+                            <div class="pull-right box-tools">
+                                <button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                                <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                            </div><!-- /. tools -->
+                            <i class="fa fa-cloud"></i>
+
+                            <h3 class="box-title">Server Load</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <!-- bar chart -->
+                                    <div class="chart" id="bar-chart" style="height: 250px;"></div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="pad">
+                                        <!-- Progress bars -->
+                                        <div class="clearfix">
+                                            <span class="pull-left">Bandwidth</span>
+                                            <small class="pull-right">10/200 GB</small>
+                                        </div>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                            <span class="pull-left">Transfered</span>
+                                            <small class="pull-right">10 GB</small>
+                                        </div>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red" style="width: 70%;"></div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                            <span class="pull-left">Activity</span>
+                                            <small class="pull-right">73%</small>
+                                        </div>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-light-blue" style="width: 70%;"></div>
+                                        </div>
+
+                                        <div class="clearfix">
+                                            <span class="pull-left">FTP</span>
+                                            <small class="pull-right">30 GB</small>
+                                        </div>
+                                        <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua" style="width: 70%;"></div>
+                                        </div>
+                                        <!-- Buttons -->
+                                        <p>
+                                            <button class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i> Generate PDF</button>
+                                        </p>
+                                    </div><!-- /.pad -->
+                                </div><!-- /.col -->
+                            </div><!-- /.row - inside box -->
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                    <input type="text" class="knob" data-readonly="true" value="80" data-width="60" data-height="60" data-fgColor="#f56954"/>
+                                    <div class="knob-label">CPU</div>
+                                </div><!-- ./col -->
+                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#00a65a"/>
+                                    <div class="knob-label">Disk</div>
+                                </div><!-- ./col -->
+                                <div class="col-xs-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#3c8dbc"/>
+                                    <div class="knob-label">RAM</div>
+                                </div><!-- ./col -->
+                            </div><!-- /.row -->
+                        </div><!-- /.box-footer -->
+                    </div><!-- /.box -->
+
+                </section><!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+
+
+            </div><!-- /.row (main row) -->
+
+
+
+
+        </section><!-- /.content -->
+
+    </aside><!-- /.right-side -->
+
+
+
+
+</div><!-- ./wrapper -->
+
+
+<script type="text/javascript" src="../user/js/app.js"></script>
+</body>
+</html>

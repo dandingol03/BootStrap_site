@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../libs/css/bootstrap.css">
+    <link rel="stylesheet" href="../libs/font_icon/css/pe-icon-7-stroke.css">
     <style>
 
         header{
@@ -39,11 +40,217 @@
 
         }
 
-       
+        .microsoft-soft{
+            font-family:Microsoft YaHei, lucida, verdana, arial, sans-serif;
+        }
+
+        #navigation{
+            background-color:#111;
+            color:#333;
+        }
+
+        .logo{
+            display:table;
+            text-align:left;
+            height:76px;
+        }
+
+        .logo-text {
+            font-size: 3em;
+            padding: 0.2em 0;
+            color: #fff;
+            font-family: Microsoft YaHei, lucida, verdana, arial, sans-serif;
+            font-weight: 100;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color:#e66f69;
+            transition:0.4s ease all;
+            text-decoration: none;
+        }
+        a:visited{
+            text-decoration: none;
+        }
+        a:focus{
+
+            transition:1s  ease all;
+            text-decoration:none;
+        }
+
+
+
+        .menu {
+            float: right;
+            font-size: 3em;
+            color: #fff;
+            padding-top: 10px;
+        }
+
+
+        .pe-7s-menu{
+            display:inline-block;
+            font-family: Pe-icon-7-stroke;
+            font-style:normal;
+            font-weight:normal;
+            font-variant:normal;
+            text-transform: none;
+            line-height: 1;
+            color:#fff;
+
+        }
+
+        .pe-7s-menu:before{
+            content:"\e636";
+        }
+        .dropdown-menu{
+            min-width: 240px;
+            right: 0;
+            left: auto;
+            border: 1px solid #000;
+            box-shadow: none;
+            border-radius: 0px;
+            margin-top: 5px;
+        }
+
+        .dropdown-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 1em 2em;
+
+        }
+
+        .dropdown-menu ul li {
+            padding: 0.3em 0em 0.6em 0em;
+            font-size: 1.3em;
+            position: relative;
+        }
+        .dropdown-menu  ul li i{
+            position:absolute;
+            right:20%;
+        }
+        .arrow-up{
+
+        }
+
+        .portfolio-area{
+            font-family:Microsoft YaHei, lucida, verdana, arial, sans-serif;
+        }
+
+
+        .block_title {
+            font-size: 4em;
+            font-weight: 300;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 70px;
+        }
+        .block_title:before,.block_title:after {
+            content: "";
+            background: #ccc;
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            width: 30%;
+            vertical-align: middle;
+        }
+
+        .item-space{
+            margin-bottom:30px;
+        }
+
+        .item-space figure {
+            max-width: 360px;
+            margin: 0 auto;
+            overflow:hidden;
+            position:relative;
+        }
+
+        .port figure img{
+            max-width: 100%;
+            display: block;
+            position: relative;
+        }
+
+        .port figcaption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            background: #111;
+            color: #e66f69;
+        }
+
+        .cs-style-3 figure img {
+            -webkit-transition: -webkit-transform 0.4s;
+            -moz-transition: -moz-transform 0.4s;
+            transition: transform 0.4s;
+        }
+
+        .cs-style-3 figure figcaption {
+            height: 100px;
+            width: 100%;
+            top: auto;
+            bottom: 0;
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            -ms-transform: translateY(100%);
+            transform: translateY(100%);
+            -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+            -moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+            transition: transform 1s, opacity 0.1s 0.3s;
+
+        }
+
+
+
+
+        .cs-style-3 figure:hover img{
+            -webkit-transform: translateY(-50px);
+            -moz-transform: translateY(-50px);
+            -ms-transform: translateY(-50px);
+            transform: translateY(-50px);
+        }
+
+        .cs-style-3 figure:hover figcaption{
+            opacity: 1;
+            -webkit-transform: translateY(-50px);
+            -moz-transform: translateY(-50px);
+            -ms-transform: translateY(-50px);
+            transform: translateY(-50px);
+            -webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+            -moz-transition: -moz-transform 0.4s, opacity 0.1s;
+            transition: transform 0.4s, opacity 1s;
+        }
+
+
+
     </style>
     <script type="text/javascript" src="../libs/js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="../libs/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../libs/js/hovertreesroll.js"></script>
+    <script>
+        function hoverScroll(ob){
+            $("#" + ob).HoverTreeScroll(500);
+        }
 
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $("a[class='animated']").click(function() {
+                $("a.animated").smoothScroll();
+            })
+
+
+        });
+
+    </script>
     <title></title>
 </head>
 <body>
@@ -53,9 +260,116 @@
             <h4 class="subheadline">i want more money,u know?</h4>
         </div>
         <div class="bottom center">
-            <a data-scroll href="#navigation" class="scrollDown animated " id="scrollToContent"
+            <a data-scroll href="javascript:hoverScroll('navigation')" class="scrollDown animated " id="scrollToContent"
                      style="text-decoration: none">move down</a>
         </div>
     </header>
+    <!-- Navigation area -->
+    <section id="navigation">
+        <div class="container">
+            <div class="row">
+                <!--BootStrap is  to 12 cols-->
+                <div class="col-xs-6">
+                    <div class="logo"><a data-scroll href="#body" class="logo-text">Dark Joe</a></div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="nav">
+                        <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown">
+                            <i class="pe-7s-menu"></i>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="arrow-up"></div>
+                            <ul>
+                                <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
+                                <li><a data-scroll href="#services">Service <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>
+                                <li><a data-scroll href="#portfolio">Portfolio <i class="pe-7s-glasses"></i></a><span class="menu-effect"></span></li>
+                                <li><a data-scroll href="#testimonial">Testimonial <i class="pe-7s-comment"></i><span class="menu-effect"></span></a></li>
+                                <li><a data-scroll href="#contact">Contact <i class="pe-7s-help1"></i></a><span class="menu-effect"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--work section-->
+    <section id="portfolio" class="portfolio-area">
+        <div class="container">
+            <h2 class="block_title">My Works</h2>
+
+
+            <!--photograph section-->
+            <div class="row port cs-style-3"><!--and this is a magic style-->
+                <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="../img/cpts/portfolio1.jpg" alt="img04">
+                        <figcaption>
+                            <h3>Settings</h3>
+                            <span>Jacob Cummings</span>
+                            <a href="#" class="button" >Take a look</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="../img/cpts/portfolio2.jpg" alt="img01">
+                        <figcaption>
+                            <h3>Camera</h3>
+                            <span>Jacob Cummings</span>
+                            <a href="#" class="button" >Take a look</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="../img/cpts/portfolio3.jpg" alt="img02">
+                        <figcaption>
+                            <h3>Music</h3>
+                            <span>Jacob Cummings</span>
+                            <a href="#" class="button" >Take a look</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="../img/cpts/portfolio4.jpg" alt="img04">
+                        <figcaption>
+                            <h3>Settings</h3>
+                            <span>Jacob Cummings</span>
+                            <a href="#" class="button" >Take a look</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="../img/cpts/portfolio5.jpg" alt="img01">
+                        <figcaption>
+                            <h3>Camera</h3>
+                            <span>Jacob Cummings</span>
+                            <a href="#" class="button" >Take a look</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 item-space">
+                    <figure>
+                        <img src="../img/cpts/portfolio6.jpg" alt="img02">
+                        <figcaption>
+                            <h3>Music</h3>
+                            <span>Jacob Cummings</span>
+                            <a href="#" class="button" >Take a look</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-xs-12">
+                    <div class="btn-center"><a href="#" class="big button">View all</a></div>
+                </div>
+            </div>
+        </div><!-- container -->
+    </section><!-- portfolio -->
+
+
 </body>
 </html>

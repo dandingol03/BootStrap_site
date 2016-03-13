@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../../js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/raphael.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="root"> </div>
+<script>
+    var paper = Raphael('root', 820, 500);
+
+    var circle = paper.circle(400, 240, 100);
+
+    circle.attr({
+        fill:'r(0.1,0.5)#fff-000',
+        stroke:'limegreen',
+        'stroke-width':10
+    })
+    var rect=paper.rect(200,150,50,100);
+    rect.attr({fill: '0-#f00-#000'});
+
+
+    var ellipse=paper.ellipse(300,100,100,50);
+
+    var xStart=100;
+    var yStart=300;
+    var path=paper.path([
+            'M',xStart,yStart,
+            'a',140,140,0,0,1,280,0
+    ]);
+
+    var sideLength = 100;
+    var x = sideLength * Math.cos(Raphael.rad(60));
+    var y = sideLength * Math.sin(Raphael.rad(60));
+
+    var haxagon=paper.path([
+            'M',600,15,
+        'l', sideLength, 0,
+        x, y,
+        -x, y,
+        -sideLength, 0
+    ])
+
+    var arc=paper.path([
+        'M', 150, 360,
+        'a', 150, 80, 0, 1, 1, 0, 80
+    ]);
+
+
+
+    var draggingX,draggingY;
+    function onstart() {
+        draggingX = this.attr('x');
+        draggingY = this.attr('y');
+        this.attr('fill', 'pink');
+    }
+    function onend() {
+        this.attr('fill', '#000');
+    }
+    function onmove(dx, dy) {
+        this.attr({
+            x: draggingX + dx,
+            y: draggingY + dy
+        });
+    }
+    rect.drag(onmove, onstart, onend);
+</script>
+
+</body>
+</html>
